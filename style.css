@@ -67,6 +67,8 @@ nav.o a:nth-child(2){transition-delay:.1s}
 nav.o a:nth-child(3){transition-delay:.15s}
 nav.o a:nth-child(4){transition-delay:.2s}
 nav.o a:nth-child(5){transition-delay:.25s}
+nav.o a:nth-child(6){transition-delay:.3s}
+nav.o a:nth-child(7){transition-delay:.35s}
 .nv-foot{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;width:100%;max-width:720px;margin:var(--s5) auto 0;padding-top:var(--s4);border-top:1px solid var(--border);font-size:var(--fs-sm);color:var(--text-light);opacity:0;transition:opacity var(--t-norm)}
 nav.o .nv-foot{opacity:1;transition-delay:.4s}
 #sh{display:none!important}
@@ -149,6 +151,8 @@ th{padding:var(--s2) var(--s3);background:var(--primary-dark);color:#fff;font-si
 td{padding:var(--s3);vertical-align:top;border-top:1px solid var(--border)}
 .dot{display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:50%;background:var(--c)}
 .band p{margin:var(--s1) 0 0;font-size:var(--fs-sm);color:#c9d6ce}
+sup{font-size:.7em;line-height:0;font-weight:600;color:var(--accent)}
+.art{scroll-margin-top:140px}
 
 /* ============================================
    FORMULAIRES ET BOUTONS
