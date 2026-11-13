@@ -4,110 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Comité d’Éthique — Site-Pandora</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{--g:#1e3d2f;--gold:#a67c37;--bg:#f6f7f4;--surf:#fff;--tx:#2b2f2c;--mut:#5d655f;--line:#d6dad3;--hd:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--g:#16291f;--gold:#c9a15a;--bg:#101512;--surf:#18201b;--tx:#e4e8e3;--mut:#9aa59d;--line:#2d3830}}
-html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font:16px/1.65 Lora,Georgia,serif}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--g);z-index:30}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--g);color:var(--hd);display:flex;align-items:center;gap:14px;padding:12px 20px;border-bottom:3px solid var(--gold)}
-header b{font:600 15px Oswald,sans-serif;letter-spacing:.08em;text-transform:uppercase;flex:1}
-#bg{background:none;border:1px solid var(--gold);width:42px;height:38px;cursor:pointer;display:grid;place-content:center;gap:5px}
-#bg i{display:block;width:20px;height:2px;background:var(--hd)}
-nav{position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);background:var(--g);z-index:40;padding:calc(20px + env(safe-area-inset-top,0px)) 0 20px;transform:translateX(100%);transition:transform .25s;border-left:3px solid var(--gold);overflow-y:auto}
-nav.o{transform:none}
-nav a{display:block;padding:14px 26px;color:var(--hd);text-decoration:none;font:500 13px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.12)}
-nav a.on{color:var(--gold)}
-#sh{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:35;display:none}
-#sh.o{display:block}
-main{max-width:860px;margin:0 auto;padding:32px 20px 60px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23888' stroke-width='1' opacity='.09'%3E%3Cpath d='M50 12v70M30 82h40M20 28h60M20 28l-9 24h18zM80 28l-9 24h18z'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center 140px;background-size:min(480px,80%)}
-.ban{background:linear-gradient(160deg,var(--g),#0d1a13);color:#fff;text-align:center;padding:40px 20px 34px;border-bottom:3px solid var(--gold);margin-bottom:26px}
-.ban svg{width:60px;height:60px;stroke:var(--gold);margin-bottom:12px;animation:up .8s .1s both}
-.ban h1{margin:0 0 8px;font:600 clamp(22px,5vw,32px)/1.2 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase}
-.ban p{margin:0;font:500 12px Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#e8e1d0}
-h2{font:600 20px Oswald,sans-serif;text-transform:uppercase;color:var(--g);border-bottom:2px solid var(--g);padding-bottom:6px;margin:34px 0 18px}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:var(--gold);border-color:var(--gold)}}
-h3{font:600 15px Montserrat,sans-serif;color:var(--gold);margin:24px 0 8px}
-.ref{font:13px monospace;color:var(--gold);text-align:center;margin-bottom:18px}
-.box{background:var(--surf);border:1px solid var(--line);border-left:4px solid var(--g);padding:16px 20px;margin:16px 0}
-.dev{font-style:italic;color:var(--gold);font-weight:600;text-align:center}
-ol{padding-left:26px}li{margin:6px 0}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-.card{display:block;background:var(--surf);border:1px solid var(--line);padding:16px;color:inherit;text-decoration:none}
-.card:hover{border-color:var(--gold)}
-.card small{font:500 11px Montserrat,sans-serif;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
-.card span{display:block;font:600 15px Oswald,sans-serif;text-transform:uppercase;margin-top:4px}
-label{display:block;font:600 12px Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 6px}
-input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);background:var(--surf);color:var(--tx);font:inherit}
-button.p,a.p{display:inline-block;margin-top:18px;background:var(--g);color:#fff;border:0;border-bottom:3px solid var(--gold);padding:11px 22px;font:600 12px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none}
-.s{background:var(--surf);border:1px solid var(--line);padding:14px 18px;margin:12px 0}
-.s .m{font:500 12px Montserrat,sans-serif;color:var(--mut)}
-.s select{width:auto;font-size:13px;padding:5px}
-.s button{background:none;border:0;color:#9b3b32;cursor:pointer;font:12px Montserrat,sans-serif;margin-left:10px}
-@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-main>*{animation:up .5s both}
-.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
-.card{transition:border-color .2s,transform .2s}.card:hover{transform:translateY(-2px)}
-.pil{background:var(--g);color:#fff;padding:18px;border-bottom:3px solid var(--gold)}
-.pil svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
-.pil b{display:block;font:600 14px Oswald,sans-serif;text-transform:uppercase;letter-spacing:.05em}
-.pil p{margin:6px 0 0;font-size:14px;line-height:1.5;color:#dfe5de}
-.sb{position:sticky;top:calc(env(safe-area-inset-top,0px) + 65px);z-index:10;background:var(--bg);padding:12px 0 8px;border-bottom:1px solid var(--line)}
-.sb p{margin:6px 0 0;min-height:1.4em}
-.toc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
-.toc button{background:var(--surf);color:var(--tx);border:1px solid var(--line);padding:5px 11px;font:500 12px Montserrat,sans-serif;cursor:pointer}
-.toc button:hover{border-color:var(--gold)}
-section{scroll-margin-top:150px}
-.band{background:var(--g);color:#fff;padding:16px 20px;margin:38px 0 8px;border-left:5px solid var(--gold)}
-.band small{font:500 11px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-.band h2{color:#fff!important;border:0!important;margin:4px 0 0!important;padding:0}
-.art{border-left:3px solid var(--gold);padding:2px 0 2px 18px;margin:22px 0}
-.art h3{margin-top:0}
-mark{background:#e9d49a;color:#1b1b1b;padding:0 2px}
-.ban{position:relative;overflow:hidden}
-.ban>*{position:relative;z-index:1}
-.ban::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;opacity:.16;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23c9a15a'%3E%3Ccircle cx='50' cy='50' r='48' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='42' stroke-width='.6' stroke-dasharray='1.2 2.2'/%3E%3Ccircle cx='50' cy='50' r='34' stroke-width='1'/%3E%3Cpath d='M50 26v40M42 66h16M32 34h36M32 34l-5 12h10zM68 34l-5 12h10z' stroke-width='1.2'/%3E%3C/svg%3E") center/contain no-repeat}
-.orn{display:flex;align-items:center;gap:12px;margin:36px 0 8px}
-.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--line)}
-.orn i{width:9px;height:9px;border:1px solid var(--gold);transform:rotate(45deg)}
-.reg{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:16px 0}
-.st{background:var(--surf);border:1px solid var(--line);border-top:3px solid var(--c);padding:12px 14px;cursor:pointer;text-align:left;color:var(--tx);transition:background .2s,transform .2s}
-.st:hover{transform:translateY(-2px)}
-.st.on{background:var(--g);color:#fff}
-.st b{display:block;font:600 28px/1.1 Oswald,sans-serif}
-.st span{font:500 11px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase}
-.dec{display:flex;gap:14px;background:var(--surf);border:1px solid var(--line);border-left:4px solid var(--c);padding:14px 18px;margin:12px 0}
-.dec svg{flex:none;width:28px;height:28px;stroke:var(--c);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
-.dec p{margin:6px 0 0}
-.tag{font:600 11px Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
-.mot{margin-top:10px;padding:8px 12px;background:var(--bg);border-left:2px solid var(--gold);font-size:14px;font-style:italic}
-.mi{margin-top:10px}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
-footer{text-align:center;font:12px Montserrat,sans-serif;color:var(--mut);padding:20px;border-top:1px solid var(--line)}
-@page{margin:16mm}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-input:focus-visible,select:focus-visible,textarea:focus-visible{outline-offset:0;border-color:var(--gold)}
-nav a:focus-visible{outline-offset:-3px}
-@media print{
-:root:not([data-theme="light"]):not(.z){--bg:#fff;--surf:#fff;--tx:#111;--mut:#555;--line:#ccc;--g:#1e3d2f;--gold:#8a6420}
-header,nav,#sh,footer,.sb,.toc,.no-print,.ban::after{display:none!important}
-body,main{background:#fff!important;color:#111!important}
-body::before{display:none}
-:root{padding:0}
-main{padding:0;max-width:none;background-image:none}
-*{animation:none!important;transition:none!important}
-.rv{opacity:1!important;transform:none!important}
-.ban,.band{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.band,.art h3{break-after:avoid}
-.art{break-inside:avoid}
-mark{background:none;color:inherit}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><b>Comité d’Éthique — Site-Pandora</b><button id="bg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nv"><i></i><i></i><i></i></button></header>
+<header><a class="brand" href="#accueil"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8v44M20 52h24M10 18h44M10 18l-7 17h14zM54 18l-7 17h14z"/></svg><span><b>Comité d’Éthique</b><small>Fondation SCP · Site-Pandora</small></span></a><button id="bg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nv"><i></i><i></i><i></i></button></header>
 <div id="sh"></div>
 <nav id="nv" aria-label="Navigation principale">
 <a href="#accueil" data-v="accueil">Accueil</a>
@@ -118,7 +19,7 @@ mark{background:none;color:inherit}
 <a href="#admin" data-v="admin">Espace administrateur</a>
 </nav>
 <main id="app"></main>
-<footer>Référence CE-108/INT-2025 — Diffusion interne, niveau d’accréditation 1</footer>
+<footer><div><b>Comité d’Éthique du Site-Pandora</b>Fondation SCP — Sécuriser. Contenir. Protéger.</div><div>Référence CE-108/INT-2025<br>Diffusion interne · Niveau d’accréditation 1</div></footer>
 <script>
 /* Salon Discord qui reçoit les suggestions et signalements. */
 const DISCORD='https://discord.com/channels/1557715688510988351/1560360246474575923';
@@ -155,6 +56,7 @@ accueil:()=>ban('Fondation SCP — Sécuriser. Contenir. Protéger.','Comité d�
 `<div class="ref">RÉFÉRENCE : CE-108/INT-2025</div>
 <p class="dev">« Protéger l’humanité, préserver l’humanité. L’éthique guide la main qui contient. »</p>
 <h2>Préambule</h2><div class="box"><p>${P}</p><p>Sa vocation n’est pas uniquement répressive : il protège l’intégrité physique et morale du personnel, encadre les pratiques scientifiques et sécuritaires, et garantit le traitement digne des sujets humains et des anomalies conscientes.</p><p class="dev">« La Fondation S.C.P. est froide, pas cruelle. »</p></div>
+<div class="facts"><div><b>11</b><span>Divisions du Code</span></div><div><b>15 jours</b><span>Délai de recours</span></div><div><b>3 mois</b><span>Évaluation éthique</span></div><div><b>Unanimité</b><span>Pour tout amendement</span></div></div>
 <h2>Principes fondateurs</h2><div class="grid"><div class="pil"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><b>Dignité</b><p>Chaque membre du personnel et chaque sujet est traité avec respect, quel que soit son grade.</p></div><div class="pil"><svg viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M4 8h16M4 8l-2 5h4zM20 8l-2 5h4z"/></svg><b>Indépendance</b><p>Le Comité agit sans subordination envers aucun département, y compris la Justice Interne.</p></div><div class="pil"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>Transparence</b><p>Les incidents sont analysés et publiés en interne pour améliorer les procédures.</p></div></div>
 <h2>Accès rapide</h2><div class="grid">
 <a class="card" href="#comite"><small>Présentation</small><span>Le Comité</span></a>
@@ -178,7 +80,7 @@ const hl=(s,r)=>s.split(/(<[^>]+>)/).map(x=>x[0]==='<'?x:x.replace(r,'<mark>$&</
 function codeHTML(q){const r=rx(q);let n=0;
 const h=D.map((d,i)=>{const as=d.a.filter(([a,t,it])=>!r||(a+' '+t+' '+it.join(' ')).replace(/<[^>]+>/g,'').search(r)>=0);
 if(!as.length)return'';
-return `<section id="d${i+1}"><div class="band rv"><small>Division ${R[i]}</small><h2>${d.t}</h2></div>`+as.map(([a,t,it])=>{n++;const H=s=>r?hl(s,r):s;return `<div class="art rv"><h3>Article ${a} — ${H(t)}</h3>`+(it.length?`<ol>${it.map(x=>`<li>${H(x)}</li>`).join('')}</ol>`:'<p class="m">Texte de l’article en cours d’intégration.</p>')+'</div>'}).join('')+'</section>'}).join('');
+return `<section id="d${i+1}"><div class="band rv"><small>Division ${R[i]}</small><h2>${d.t}</h2></div>`+as.map(([a,t,it])=>{n++;const H=s=>r?hl(s,r):s;return `<div class="art rv"><h3><small>Article ${a}</small>${H(t)}</h3>`+(it.length?`<ol>${it.map(x=>`<li>${H(x)}</li>`).join('')}</ol>`:'<p class="m">Texte de l’article en cours d’intégration.</p>')+'</div>'}).join('')+'</section>'}).join('');
 return{h:h||'<p>Aucun résultat.</p>',n}}
 const SC={'Nouvelle':'#6b7a70','En étude':'#a67c37','Retenue':'#2f6f8f','Acceptée':'#2f7a4f','Rejetée':'#9b3b32'};
 const IC={'Nouvelle':'<path d="M3 6h18v12H3zM3 6l9 7 9-7"/>','En étude':'<path d="M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/>','Retenue':'<path d="M6 3h12v18l-6-4-6 4z"/>','Acceptée':'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>','Rejetée':'<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>'};
