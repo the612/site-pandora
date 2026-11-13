@@ -105,7 +105,6 @@ main{padding:0;max-width:none;background-image:none}
 mark{background:none;color:inherit}
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 </head>
 <body>
 <header><b>Comité d’Éthique — Site-Pandora</b><button id="bg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nv"><i></i><i></i><i></i></button></header>
@@ -121,9 +120,8 @@ mark{background:none;color:inherit}
 <main id="app"></main>
 <footer>Référence CE-108/INT-2025 — Diffusion interne, niveau d’accréditation 1</footer>
 <script>
-/* Configuration Supabase : renseigner l’URL du projet et la clé publique (anon / publishable). Ne jamais y mettre la clé service_role. */
-const SB_URL='',SB_KEY='';
-const sb=SB_URL&&typeof supabase!=='undefined'?supabase.createClient(SB_URL,SB_KEY):null;
+const REPO='the612/site-pandora';
+const KEYS={"pub":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvwR3fx8PG_07txWQC-6UY4M_FO5gCR-YSENl5xaOrhk0UE0FpvAdzj3Le1r12swadK3GD5Bfa6HJtpOHBSOMmy1Bfa5PMeucLjn_8w2RmOyRQ7bRwmVTGzXU5g9yiJFP2_ExNytTIcE6Jggc-OSs0hjY-rq2HloQm6nkxI45gbPMXdpIIem6U6QAcGckyz1DIj7RY38X-GoKCU3tK7Zy5ItYJPXqlAfcFGuAl_qDk9_vx7k4nGd5KO1KRp9mNsthFhj4nM43cxZoCLiSD2ztkxAILUU2A9hMlBeu75vYvP2SpZ_u1eGrU9mZEcASAopmzx2WjMkPritg8DCm91esowIDAQAB","wrap":{"s":"uIk6Q0yX5i04L0GoahrbeA","iv":"4EiQcrKd_aWXyNEO","d":"9Rw6QN_Nv1pmEv3-NSoKoxICGw7AUtLan_EbqusN0hxP0y3bZ1s5AGOt-D-80EFwd244zuAVx-YxhUYaI5L1ZAAwmdFJdqO-obqcq0jc-4t5qxU5Fu5hxxafWW7beOavZIEVuMzfguCNtIVK5Rq9YX5lfE_tFog99hPOEK2kOgDQ_U55LWQmhSAsECz_cdRZlKmwYoLrz8xLjq1gXv3nI0lRwDf85OduBorsFj5FW8c-rgio062YM_OVkW-7an6z2Qif8BUVaC-0oLk-wqUFdBM9QuFf81YuJYtIA95-_MbYRNZowFMxOsGF5BXPLkdFp2TyEhuO768LufBM0N5AgAdLRA7ufJfspT2tLExI43-3DBiOsWp9oL-rC06WzndsjpmP1cskWqVgnL55LZ2aQS2wVzNNUgWaBV1gh4WBEA5l5SviYQcpaGqueVSBiF4rL9VFNMck2-5fxA4EfV9gkeIPlDRZFLIJIV6BVp0Chvkj5cm0Xo7oZwc9xJyI7-MXVkcMzLvRT-L1KBquI5M08XoQBgaAXs7sEDkdniHGbWbtbI0z9YElgNCVCvruTm4tH_y1HS96X9jJip_0323WnMHXz693pzxlMuzvebzScQfjE0yGwzaJaVsVPW154TU8QSPTlPviwcPtQAYgVvDzDAY9wUS4SxhUy21LHI6z-E5VeT-i_KUHm58r46l8LRknjCWx5EIRKgtUnkp284Qu5ErCzOjw2a6TEHAGuo5ZVKXKzpKaVaC85Z0o7DfmgMIWvPtZRLgd52JjOuDDfsx37kYLaxqzrrsR56wSinWFd8zBtjJglcPJcatXrrY6og6tCcToOCp1mIxk1w4TYPFhLy3Xi1CLKwD9WG2FcVbsgyHkfzV2jM5WUI9x1jOj_PUJlwf2Jcu4lomdlWWiHDDKbfqBMUuVIZTMgIJBadJG5SU3IBhXW8ydq8uX_Cb5fpSV9o2hur-RPH7PmpsI8dum0kc-I6xuaBHyHwKe132A5FGYP83NBAvqrdbSdRPzz1wkh_eq3_ALTr81xOfV-FnrcFCs0tZEmXqIb7oFwxF1InC-iuvckomr9Vp75vRyGy4UNmC7nK6CmeLpraCqYZ4mMS1RUZwfTcwEAngOdHByxaw8HzFuEkDqgfjIt9nhsy-hE24kLI7IEYEX8BhqybYxA2dYSXCLYNIoX-5BRNmNM9--9NUHJr9Wlv-bElccJ2h-vC5gJPyUyTilvxJ9jCk67qZQ3k5F3M36i9h-IAH2TiBCgmKiON4DTkJcc6gMATftQPwBYVH7NCLznsZCLBy3i2p36_5O-UarNV_EzPhpW_6sKJYu9XMJlJNlALcQ03EYNCR0Z0XURejxVEfIS9nAXYowh8YKLtFE4i4Gy93f4qlzEcvn33ib_ebs7jTwzsQtFPI6Poy5FdNR9qvrj2-NXW8xYEBRsuHZjgN4qPG2rNtQnmTh-esEYvMRgK2GtgnQPU32og0juIz7L3MN-jg9scU16lGxbcjM_Cw-r95mKgc6PhEU3yi_w00Y-KhgtHqUKa2AF4AAiJA2jgBHyLNGbzP5IVZsTfaNQgwEAuYx2GsLaCfNWQHmpxh6akAQ_Ls1tHCkZbvff45ppbVIJm9wPS_4H4S4O12WkdwfnpxkCktAdXU","n":600000}};
 const P='Le Code d’Éthique constitue l’un des textes fondateurs et structurants de la Fondation SCP. Il fixe les limites infranchissables, les obligations professionnelles et les droits humanitaires applicables à chaque membre du personnel, dès son intégration et tout au long de son service, y compris lors des opérations extérieures.';
 const D=[
 {t:'Autorité, gouvernance et mandat du Comité d’Éthique',a:[
@@ -168,9 +166,9 @@ comite:()=>ban('Le Comité d’Éthique','Composition, mandat et pouvoirs')+
 code:()=>ban('Code d’éthique unifié','Charte déontologique — En vigueur')+
 `<div class="sb"><input id="q" type="search" aria-label="Rechercher" placeholder="Rechercher dans tout le code (ex. A.S.I.A., Classe-D, lockdown)"><p class="m" id="cnt"></p></div><div class="toc">${D.map((d,i)=>`<button data-d="${i+1}" title="${d.t}">Division ${R[i]}</button>`).join('')}</div><div class="no-print"><button class="p" id="pr" type="button">Exporter / imprimer en PDF</button></div><div id="cb"></div>`,
 suggestion:()=>ban('Proposer une amélioration','Toute contribution est examinée par le Comité')+
-`<h2>Registre des décisions</h2><p class="m">En étude : examen en cours. Retenue : retenue pour amendement. Acceptée : intégrée au Code. Rejetée : non retenue.</p><div class="reg" id="rg"></div><div id="dl"></div><div class="orn"><i></i></div><h2>Soumettre une suggestion</h2><div id="f"><label for="n">Nom ou matricule (facultatif)</label><input id="n" maxlength="80"><label for="a">Article concerné</label><select id="a"><option>Général</option>${arts().map(x=>`<option>${x}</option>`).join('')}</select><label for="t">Suggestion</label><textarea id="t" rows="7" maxlength="2000"></textarea><button class="p" id="go" type="button">Transmettre</button><p id="ok" role="status"></p></div>`,
+`<h2>Registre des décisions</h2><p class="m">En étude : examen en cours. Retenue : retenue pour amendement. Acceptée : intégrée au Code. Rejetée : non retenue.</p><div class="reg" id="rg"></div><div id="dl"></div><div class="orn"><i></i></div><h2>Soumettre une suggestion</h2><div id="f"><label for="a">Article concerné</label><select id="a"><option>Général</option>${arts().map(x=>`<option>${x}</option>`).join('')}</select><label for="t">Suggestion</label><textarea id="t" rows="7" maxlength="2000"></textarea><button class="p" id="go" type="button">Transmettre</button><p id="ok" role="status"></p></div>`,
 signalement:()=>ban('Signalement','Article 2.2 — Protection des lanceurs d’alerte')+
-`<div class="box"><p>Tout comportement suspect ou abus peut être signalé au Comité d’Éthique de façon anonyme. Aucune identité n’est demandée. Toute mesure de rétorsion envers un signalant est sévèrement réprimée.</p></div><div id="rf"><label for="c">Nature du signalement</label><select id="c"><option>Abus d’autorité</option><option>Violation éthique</option><option>Harcèlement ou discrimination</option><option>Atteinte à la confidentialité</option><option>Autre</option></select><label for="rt">Description des faits</label><textarea id="rt" rows="8" maxlength="4000"></textarea><label for="ct">Moyen de vous recontacter (facultatif)</label><input id="ct" maxlength="120"><button class="p" id="rs" type="button">Envoyer le signalement</button><p id="rk" role="status"></p></div>`,
+`<div class="box"><p>Tout comportement suspect ou abus peut être signalé au Comité d’Éthique. Le contenu est chiffré dans votre navigateur : seul le Comité peut le lire. L’envoi passe par un compte GitHub, dont le nom reste visible publiquement. Toute mesure de rétorsion envers un signalant est sévèrement réprimée.</p></div><div id="rf"><label for="c">Nature du signalement</label><select id="c"><option>Abus d’autorité</option><option>Violation éthique</option><option>Harcèlement ou discrimination</option><option>Atteinte à la confidentialité</option><option>Autre</option></select><label for="rt">Description des faits</label><textarea id="rt" rows="8" maxlength="1500"></textarea><label for="ct">Moyen de vous recontacter (facultatif)</label><input id="ct" maxlength="120"><button class="p" id="rs" type="button">Envoyer le signalement</button><p id="rk" role="status"></p></div>`,
 admin:()=>ban('Espace administrateur','Accès restreint')+`<div id="ad"></div>`};
 function rx(q){const m={a:'aàâä',e:'eéèêë',i:'iîï',o:'oôö',u:'uùûü',c:'cç'};
 const p=q.toLowerCase().replace(/[^a-z0-9àâäéèêëîïôöùûüç\s]/g,'').trim();if(!p)return null;
@@ -183,33 +181,47 @@ return `<section id="d${i+1}"><div class="band rv"><small>Division ${R[i]}</smal
 return{h:h||'<p>Aucun résultat.</p>',n}}
 const SC={'Nouvelle':'#6b7a70','En étude':'#a67c37','Retenue':'#2f6f8f','Acceptée':'#2f7a4f','Rejetée':'#9b3b32'};
 const IC={'Nouvelle':'<path d="M3 6h18v12H3zM3 6l9 7 9-7"/>','En étude':'<path d="M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/>','Retenue':'<path d="M6 3h12v18l-6-4-6 4z"/>','Acceptée':'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>','Rejetée':'<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>'};
-const nodb='<div class="box"><p>La base de données n’est pas configurée.</p></div>';
 const dt=x=>new Date(x).toLocaleDateString('fr-FR');
+const b64=u=>btoa(String.fromCharCode(...new Uint8Array(u))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const ub=t=>Uint8Array.from(atob(t.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
+const RSA={name:'RSA-OAEP',hash:'SHA-256'};
+async function seal(text){
+const pub=await crypto.subtle.importKey('spki',ub(KEYS.pub),RSA,false,['encrypt']);
+const k=await crypto.subtle.generateKey({name:'AES-GCM',length:256},true,['encrypt']);
+const iv=crypto.getRandomValues(new Uint8Array(12));
+const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},k,new TextEncoder().encode(text));
+const ek=await crypto.subtle.encrypt({name:'RSA-OAEP'},pub,await crypto.subtle.exportKey('raw',k));
+return [ek,iv,ct].map(b64).join('.')}
+let PRIV=null;
+async function unlock(pw){const w=KEYS.wrap;
+const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+const k=await crypto.subtle.deriveKey({name:'PBKDF2',salt:ub(w.s),iterations:w.n,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+PRIV=await crypto.subtle.importKey('pkcs8',await crypto.subtle.decrypt({name:'AES-GCM',iv:ub(w.iv)},k,ub(w.d)),RSA,false,['decrypt'])}
+async function unseal(p){const[ek,iv,ct]=p.split('.').map(ub);
+const k=await crypto.subtle.importKey('raw',await crypto.subtle.decrypt({name:'RSA-OAEP'},PRIV,ek),'AES-GCM',false,['decrypt']);
+return new TextDecoder().decode(await crypto.subtle.decrypt({name:'AES-GCM',iv},k,ct))}
+async function issues(){const r=await fetch(`https://api.github.com/repos/${REPO}/issues?state=all&per_page=100`);if(!r.ok)throw 0;return(await r.json()).filter(i=>!i.pull_request)}
+const st=i=>i.labels.map(l=>l.name).find(n=>SC[n]&&n!=='Nouvelle')||'Nouvelle';
+const gh=(t,b)=>`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(t)}&body=${encodeURIComponent(b)}`;
 let RG=null;
 async function reg(f){
-if(!sb){$('#dl').innerHTML=nodb;return}
-if(!RG){const r=await sb.from('public_decisions').select('*').order('created_at',{ascending:false});if(r.error){$('#dl').innerHTML='<div class="box"><p>Registre momentanément indisponible.</p></div>';return}RG=r.data}
+if(!RG){try{RG=(await issues()).filter(i=>i.title.startsWith('[Suggestion]')&&st(i)!=='Nouvelle').map(i=>({created_at:i.created_at,article:i.title.slice(13),body:i.body||'',status:st(i)}))}catch(e){$('#dl').innerHTML='<div class="box"><p>Registre momentanément indisponible.</p></div>';return}}
 $('#rg').innerHTML=Object.keys(SC).filter(k=>k!=='Nouvelle').map(k=>`<button type="button" class="st${f===k?' on':''}" style="--c:${SC[k]}" data-f="${k}"><b>${RG.filter(s=>s.status===k).length}</b><span>${k}</span></button>`).join('');
 const sh=RG.filter(s=>!f||s.status===f);
-$('#dl').innerHTML=sh.length?sh.map(s=>`<div class="dec" style="--c:${SC[s.status]}"><svg viewBox="0 0 24 24">${IC[s.status]}</svg><div><span class="tag">${s.status}</span><div class="m">${dt(s.created_at)} — ${esc(s.article)}</div><p>${esc(s.body.length>160?s.body.slice(0,160)+'…':s.body)}</p>${s.motif?`<div class="mot">${esc(s.motif)}</div>`:''}</div></div>`).join(''):'<div class="box"><p>Aucune décision dans cette catégorie pour le moment.</p></div>';
+$('#dl').innerHTML=sh.length?sh.map(s=>`<div class="dec" style="--c:${SC[s.status]}"><svg viewBox="0 0 24 24">${IC[s.status]}</svg><div><span class="tag">${s.status}</span><div class="m">${dt(s.created_at)} — ${esc(s.article)}</div><p>${esc(s.body.length>160?s.body.slice(0,160)+'…':s.body)}</p></div></div>`).join(''):'<div class="box"><p>Aucune décision dans cette catégorie pour le moment.</p></div>';
 document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>reg(f===b.dataset.f?'':b.dataset.f))}
-const row=(tb,id,k,v,opts)=>`<select aria-label="Statut" data-tb="${tb}" data-k="${k}" data-id="${id}">${opts.map(o=>`<option${o===v?' selected':''}>${o}</option>`).join('')}</select><button type="button" data-tb="${tb}" data-del="${id}">Supprimer</button>`;
-const sug=L=>L.length?L.map(x=>`<div class="s"><div class="m">${dt(x.created_at)} — ${esc(x.author||'Anonyme')} — ${esc(x.article)}</div><p>${esc(x.body)}</p>${row('suggestions',x.id,'status',x.status,Object.keys(SC))}<input class="mi" aria-label="Motif" data-tb="suggestions" data-k="motif" data-id="${x.id}" placeholder="Motif de la décision (affiché dans le registre public)" value="${esc(x.motif||'')}"></div>`).join(''):'<p>Aucune suggestion.</p>';
-const rep=L=>L.length?L.map(x=>`<div class="s"><div class="m">${dt(x.created_at)} — ${esc(x.category)}</div><p>${esc(x.body)}</p>${x.contact?`<div class="m">Contact : ${esc(x.contact)}</div>`:''}${row('reports',x.id,'status',x.status,['Nouveau','En cours','Clos'])}</div>`).join(''):'<p>Aucun signalement.</p>';
 async function panel(el,tab){tab=tab||'s';
-const[a,b]=await Promise.all([sb.from('suggestions').select('*').order('created_at',{ascending:false}),sb.from('reports').select('*').order('created_at',{ascending:false})]);
-const S=a.data||[],T=b.data||[];
-el.innerHTML=`<div class="toc"><button type="button" data-t="s">Suggestions (${S.length})</button><button type="button" data-t="r">Signalements (${T.length})</button><button type="button" id="lo">Se déconnecter</button></div><div id="pl"></div>`;
-const pl=$('#pl');pl.innerHTML=tab==='s'?sug(S):rep(T);
+let L;try{L=await issues()}catch(e){el.innerHTML='<div class="box"><p>Impossible de joindre GitHub pour le moment.</p></div>';return}
+const S=L.filter(i=>i.title.startsWith('[Suggestion]')),T=L.filter(i=>i.title.startsWith('[Signalement]'));
+const lk=i=>`<a href="${i.html_url}" target="_blank" rel="noopener">Gérer sur GitHub</a>`;
+const sg=S.length?S.map(i=>`<div class="s"><div class="m">${dt(i.created_at)} — ${esc(i.title.slice(13))} — ${st(i)}</div><p>${esc(i.body||'')}</p>${lk(i)}</div>`).join(''):'<p>Aucune suggestion.</p>';
+const rp=(await Promise.all(T.map(async i=>{let c;try{const o=JSON.parse(await unseal((i.body||'').replace(/^CE1:/,'').trim()));c=`<div class="m">${dt(i.created_at)} — ${esc(o.c)}</div><p>${esc(o.t)}</p>${o.k?`<div class="m">Contact : ${esc(o.k)}</div>`:''}`}catch(e){c=`<div class="m">${dt(i.created_at)}</div><p>Contenu illisible ou non émis par ce site.</p>`}return `<div class="s">${c}${lk(i)}</div>`}))).join('')||'<p>Aucun signalement.</p>';
+el.innerHTML=`<div class="toc"><button type="button" data-t="s">Suggestions (${S.length})</button><button type="button" data-t="r">Signalements (${T.length})</button><button type="button" id="lo">Verrouiller</button></div>${tab==='s'?sg:rp}`;
 el.querySelectorAll('[data-t]').forEach(x=>x.onclick=()=>panel(el,x.dataset.t));
-$('#lo').onclick=async()=>{await sb.auth.signOut();admin()};
-pl.onchange=async e=>{const t=e.target;if(!t.dataset.id)return;const v=t.dataset.k==='motif'?(t.value.trim()||null):t.value;const r=await sb.from(t.dataset.tb).update({[t.dataset.k]:v}).eq('id',t.dataset.id);if(r.error)alert('Modification refusée.')};
-pl.onclick=async e=>{const t=e.target;if(!t.dataset.del||!confirm('Supprimer définitivement cet élément ?'))return;await sb.from(t.dataset.tb).delete().eq('id',t.dataset.del);panel(el,tab)}}
-async function admin(){const el=$('#ad');if(!sb){el.innerHTML=nodb;return}
-const{data:{session}}=await sb.auth.getSession();
-if(session){const{data:ok}=await sb.rpc('is_admin');if(ok)return panel(el);await sb.auth.signOut()}
-el.innerHTML='<label for="em">Adresse e-mail</label><input id="em" type="email" autocomplete="username"><label for="pw">Mot de passe</label><input id="pw" type="password" autocomplete="current-password"><button class="p" id="lg" type="button">Se connecter</button><p id="er" role="alert"></p>';
-$('#lg').onclick=async()=>{const r=await sb.auth.signInWithPassword({email:$('#em').value.trim(),password:$('#pw').value});if(r.error){$('#er').textContent='Identifiants incorrects.';return}admin()}}
+$('#lo').onclick=()=>{PRIV=null;admin()}}
+async function admin(){const el=$('#ad');if(PRIV)return panel(el);
+el.innerHTML='<label for="em">Identifiant</label><input id="em" autocomplete="username"><label for="pw">Code d’accès</label><input id="pw" type="password" autocomplete="current-password"><button class="p" id="lg" type="button">Déverrouiller</button><p id="er" role="alert"></p>';
+$('#lg').onclick=async()=>{$('#er').textContent='Vérification…';try{await unlock($('#em').value.trim().toLowerCase()+':'+$('#pw').value);admin()}catch(e){$('#er').textContent='Identifiant ou code incorrect.'}}}
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.08});
 const rv=()=>document.querySelectorAll('.rv:not(.in)').forEach(e=>io.observe(e));
 function route(){const h=(location.hash||'#accueil').slice(1);let v=h;
@@ -219,16 +231,11 @@ if(m)v='code';
 document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
 menu(false);window.scrollTo(0,0);bind()}
 function bind(){
-const g=$('#go');if(g)g.onclick=async()=>{const t=$('#t').value.trim();if(t.length<10){$('#ok').textContent='Veuillez détailler votre suggestion.';return}
-if(!sb){$('#ok').textContent='Base de données non configurée.';return}
-g.disabled=true;const r=await sb.from('suggestions').insert({author:$('#n').value.trim()||null,article:$('#a').value,body:t});
-if(r.error){g.disabled=false;$('#ok').textContent='Envoi impossible. Veuillez réessayer.';return}
-$('#f').innerHTML='<div class="box"><p>Votre suggestion a été transmise au Comité d’Éthique. Elle apparaîtra dans le registre une fois examinée.</p></div>'};
-const rs=$('#rs');if(rs)rs.onclick=async()=>{const t=$('#rt').value.trim();if(t.length<10){$('#rk').textContent='Veuillez décrire les faits.';return}
-if(!sb){$('#rk').textContent='Base de données non configurée.';return}
-rs.disabled=true;const r=await sb.from('reports').insert({category:$('#c').value,body:t,contact:$('#ct').value.trim()||null});
-if(r.error){rs.disabled=false;$('#rk').textContent='Envoi impossible. Veuillez réessayer.';return}
-$('#rf').innerHTML='<div class="box"><p>Votre signalement a été transmis au Comité d’Éthique.</p></div>'};
+const g=$('#go');if(g)g.onclick=()=>{const t=$('#t').value.trim();if(t.length<10){$('#ok').innerHTML='Veuillez détailler votre suggestion.';return}
+$('#ok').innerHTML=`<a class="p" href="${gh('[Suggestion] '+$('#a').value,t)}" target="_blank" rel="noopener">Valider sur GitHub</a><br><span class="m">Un compte GitHub est nécessaire. Cliquez sur « Submit new issue » pour finaliser.</span>`};
+const rs=$('#rs');if(rs)rs.onclick=async()=>{const t=$('#rt').value.trim();if(t.length<10){$('#rk').innerHTML='Veuillez décrire les faits.';return}
+const p=await seal(JSON.stringify({c:$('#c').value,t,k:$('#ct').value.trim()}));
+$('#rk').innerHTML=`<a class="p" href="${gh('[Signalement] '+new Date().toISOString().slice(0,10),'CE1:'+p)}" target="_blank" rel="noopener">Envoyer via GitHub</a><br><span class="m">Le contenu est chiffré. Cliquez sur « Submit new issue » pour finaliser.</span>`};
 if($('#ad'))admin();
 if($('#rg'))reg('');
 const q=$('#q');if(q){const up=()=>{const c=codeHTML(q.value);$('#cb').innerHTML=c.h;$('#cnt').textContent=q.value.trim()?c.n+' article(s) correspondant(s)':'';rv()};q.oninput=up;up();
