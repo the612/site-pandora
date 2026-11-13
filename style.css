@@ -139,6 +139,16 @@ section{scroll-margin-top:140px}
 ol{margin:0;padding:0;list-style:none;counter-reset:l}
 li{position:relative;margin:0 0 var(--s2);padding-left:var(--s5);counter-increment:l;font-size:.95rem}
 li::before{content:counter(l) ".";position:absolute;left:0;font-weight:600;color:var(--primary)}
+ul{margin:var(--s1) 0 var(--s3);padding:0;list-style:none}
+ul li{counter-increment:none;padding-left:var(--s4);margin-bottom:var(--s1)}
+ul li::before{content:"";top:.72em;width:5px;height:5px;border-radius:50%;background:var(--primary)}
+.art p{max-width:none;font-size:.95rem}
+.tw{margin:var(--s4) 0;overflow-x:auto;border:1px solid var(--border);border-radius:var(--r2)}
+table{width:100%;min-width:700px;border-collapse:collapse;font-size:var(--fs-sm);line-height:1.55}
+th{padding:var(--s2) var(--s3);background:var(--primary-dark);color:#fff;font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-align:left}
+td{padding:var(--s3);vertical-align:top;border-top:1px solid var(--border)}
+.dot{display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:50%;background:var(--c)}
+.band p{margin:var(--s1) 0 0;font-size:var(--fs-sm);color:#c9d6ce}
 
 /* ============================================
    FORMULAIRES ET BOUTONS
