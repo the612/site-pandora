@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comité d’Éthique — Site-Pandora</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Montserrat:wght@500;600&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1e3d2f;--gold:#a67c37;--bg:#f6f7f4;--surf:#fff;--tx:#2b2f2c;--mut:#5d655f;--line:#d6dad3;--hd:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--g:#16291f;--gold:#c9a15a;--bg:#101512;--surf:#18201b;--tx:#e4e8e3;--mut:#9aa59d;--line:#2d3830}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font:16px/1.65 Lora,Georgia,serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--g);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--g);color:var(--hd);display:flex;align-items:center;gap:14px;padding:12px 20px;border-bottom:3px solid var(--gold)}
+header b{font:600 15px Oswald,sans-serif;letter-spacing:.08em;text-transform:uppercase;flex:1}
+#bg{background:none;border:1px solid var(--gold);width:42px;height:38px;cursor:pointer;display:grid;place-content:center;gap:5px}
+#bg i{display:block;width:20px;height:2px;background:var(--hd)}
+nav{position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);background:var(--g);z-index:40;padding:calc(20px + env(safe-area-inset-top,0px)) 0 20px;transform:translateX(100%);transition:transform .25s;border-left:3px solid var(--gold);overflow-y:auto}
+nav.o{transform:none}
+nav a{display:block;padding:14px 26px;color:var(--hd);text-decoration:none;font:500 13px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.12)}
+nav a.on{color:var(--gold)}
+#sh{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:35;display:none}
+#sh.o{display:block}
+main{max-width:860px;margin:0 auto;padding:32px 20px 60px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23888' stroke-width='1' opacity='.09'%3E%3Cpath d='M50 12v70M30 82h40M20 28h60M20 28l-9 24h18zM80 28l-9 24h18z'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center 140px;background-size:min(480px,80%)}
+.ban{background:linear-gradient(160deg,var(--g),#0d1a13);color:#fff;text-align:center;padding:40px 20px 34px;border-bottom:3px solid var(--gold);margin-bottom:26px}
+.ban svg{width:60px;height:60px;stroke:var(--gold);margin-bottom:12px;animation:up .8s .1s both}
+.ban h1{margin:0 0 8px;font:600 clamp(22px,5vw,32px)/1.2 Oswald,sans-serif;letter-spacing:.04em;text-transform:uppercase}
+.ban p{margin:0;font:500 12px Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#e8e1d0}
+h2{font:600 20px Oswald,sans-serif;text-transform:uppercase;color:var(--g);border-bottom:2px solid var(--g);padding-bottom:6px;margin:34px 0 18px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:var(--gold);border-color:var(--gold)}}
+h3{font:600 15px Montserrat,sans-serif;color:var(--gold);margin:24px 0 8px}
+.ref{font:13px monospace;color:var(--gold);text-align:center;margin-bottom:18px}
+.box{background:var(--surf);border:1px solid var(--line);border-left:4px solid var(--g);padding:16px 20px;margin:16px 0}
+.dev{font-style:italic;color:var(--gold);font-weight:600;text-align:center}
+ol{padding-left:26px}li{margin:6px 0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{display:block;background:var(--surf);border:1px solid var(--line);padding:16px;color:inherit;text-decoration:none}
+.card:hover{border-color:var(--gold)}
+.card small{font:500 11px Montserrat,sans-serif;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+.card span{display:block;font:600 15px Oswald,sans-serif;text-transform:uppercase;margin-top:4px}
+label{display:block;font:600 12px Montserrat,sans-serif;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 6px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);background:var(--surf);color:var(--tx);font:inherit}
+button.p,a.p{display:inline-block;margin-top:18px;background:var(--g);color:#fff;border:0;border-bottom:3px solid var(--gold);padding:11px 22px;font:600 12px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.s{background:var(--surf);border:1px solid var(--line);padding:14px 18px;margin:12px 0}
+.s .m{font:500 12px Montserrat,sans-serif;color:var(--mut)}
+.s select{width:auto;font-size:13px;padding:5px}
+.s button{background:none;border:0;color:#9b3b32;cursor:pointer;font:12px Montserrat,sans-serif;margin-left:10px}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+main>*{animation:up .5s both}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+.card{transition:border-color .2s,transform .2s}.card:hover{transform:translateY(-2px)}
+.pil{background:var(--g);color:#fff;padding:18px;border-bottom:3px solid var(--gold)}
+.pil svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
+.pil b{display:block;font:600 14px Oswald,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.pil p{margin:6px 0 0;font-size:14px;line-height:1.5;color:#dfe5de}
+.sb{position:sticky;top:calc(env(safe-area-inset-top,0px) + 65px);z-index:10;background:var(--bg);padding:12px 0 8px;border-bottom:1px solid var(--line)}
+.sb p{margin:6px 0 0;min-height:1.4em}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.toc button{background:var(--surf);color:var(--tx);border:1px solid var(--line);padding:5px 11px;font:500 12px Montserrat,sans-serif;cursor:pointer}
+.toc button:hover{border-color:var(--gold)}
+section{scroll-margin-top:150px}
+.band{background:var(--g);color:#fff;padding:16px 20px;margin:38px 0 8px;border-left:5px solid var(--gold)}
+.band small{font:500 11px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.band h2{color:#fff!important;border:0!important;margin:4px 0 0!important;padding:0}
+.art{border-left:3px solid var(--gold);padding:2px 0 2px 18px;margin:22px 0}
+.art h3{margin-top:0}
+mark{background:#e9d49a;color:#1b1b1b;padding:0 2px}
+.ban{position:relative;overflow:hidden}
+.ban>*{position:relative;z-index:1}
+.ban::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;opacity:.16;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23c9a15a'%3E%3Ccircle cx='50' cy='50' r='48' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='42' stroke-width='.6' stroke-dasharray='1.2 2.2'/%3E%3Ccircle cx='50' cy='50' r='34' stroke-width='1'/%3E%3Cpath d='M50 26v40M42 66h16M32 34h36M32 34l-5 12h10zM68 34l-5 12h10z' stroke-width='1.2'/%3E%3C/svg%3E") center/contain no-repeat}
+.orn{display:flex;align-items:center;gap:12px;margin:36px 0 8px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--line)}
+.orn i{width:9px;height:9px;border:1px solid var(--gold);transform:rotate(45deg)}
+.reg{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:16px 0}
+.st{background:var(--surf);border:1px solid var(--line);border-top:3px solid var(--c);padding:12px 14px;cursor:pointer;text-align:left;color:var(--tx);transition:background .2s,transform .2s}
+.st:hover{transform:translateY(-2px)}
+.st.on{background:var(--g);color:#fff}
+.st b{display:block;font:600 28px/1.1 Oswald,sans-serif}
+.st span{font:500 11px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.dec{display:flex;gap:14px;background:var(--surf);border:1px solid var(--line);border-left:4px solid var(--c);padding:14px 18px;margin:12px 0}
+.dec svg{flex:none;width:28px;height:28px;stroke:var(--c);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.dec p{margin:6px 0 0}
+.tag{font:600 11px Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.mot{margin-top:10px;padding:8px 12px;background:var(--bg);border-left:2px solid var(--gold);font-size:14px;font-style:italic}
+.mi{margin-top:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+footer{text-align:center;font:12px Montserrat,sans-serif;color:var(--mut);padding:20px;border-top:1px solid var(--line)}
+@page{margin:16mm}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline-offset:0;border-color:var(--gold)}
+nav a:focus-visible{outline-offset:-3px}
+@media print{
+:root:not([data-theme="light"]):not(.z){--bg:#fff;--surf:#fff;--tx:#111;--mut:#555;--line:#ccc;--g:#1e3d2f;--gold:#8a6420}
+header,nav,#sh,footer,.sb,.toc,.no-print,.ban::after{display:none!important}
+body,main{background:#fff!important;color:#111!important}
+body::before{display:none}
+:root{padding:0}
+main{padding:0;max-width:none;background-image:none}
+*{animation:none!important;transition:none!important}
+.rv{opacity:1!important;transform:none!important}
+.ban,.band{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.band,.art h3{break-after:avoid}
+.art{break-inside:avoid}
+mark{background:none;color:inherit}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+</head>
+<body>
+<header><b>Comité d’Éthique — Site-Pandora</b><button id="bg" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nv"><i></i><i></i><i></i></button></header>
+<div id="sh"></div>
+<nav id="nv" aria-label="Navigation principale">
+<a href="#accueil" data-v="accueil">Accueil</a>
+<a href="#comite" data-v="comite">Le Comité</a>
+<a href="#code" data-v="code">Code d’éthique</a>
+<a href="#suggestion" data-v="suggestion">Soumettre une suggestion</a>
+<a href="#signalement" data-v="signalement">Signalement</a>
+<a href="#admin" data-v="admin">Espace administrateur</a>
+</nav>
+<main id="app"></main>
+<footer>Référence CE-108/INT-2025 — Diffusion interne, niveau d’accréditation 1</footer>
+<script>
+/* Configuration Supabase : renseigner l’URL du projet et la clé publique (anon / publishable). Ne jamais y mettre la clé service_role. */
+const SB_URL='',SB_KEY='';
+const sb=SB_URL&&typeof supabase!=='undefined'?supabase.createClient(SB_URL,SB_KEY):null;
+const P='Le Code d’Éthique constitue l’un des textes fondateurs et structurants de la Fondation SCP. Il fixe les limites infranchissables, les obligations professionnelles et les droits humanitaires applicables à chaque membre du personnel, dès son intégration et tout au long de son service, y compris lors des opérations extérieures.';
+const D=[
+{t:'Autorité, gouvernance et mandat du Comité d’Éthique',a:[
+['1.1','Champ d’application et primauté normative',['Le présent Code s’applique universellement à l’ensemble du personnel affecté au Site-Pandora et aux installations rattachées, qu’il soit permanent, temporaire ou externe, de la Classe-E à la Classe-A.','Le Code d’Éthique prévaut sur le Code Pénal interne de la Fondation. En cas de conflit normatif ou d’infraction purement éthique lors d’une arrestation (EAP/DJI), le dossier relève exclusivement de la compétence du Comité d’Éthique.','Aucune procédure disciplinaire impliquant un manquement éthique n’est valide sans consultation préalable et formelle du Comité d’Éthique.']],
+['1.2','Composition et gouvernance du Comité',['Le Comité d’Éthique est une instance autonome composée d’un effectif restreint sélectionné pour son impartialité, son intégrité et sa lucidité (nomination sous protocole [CONFIDENTIEL]).','Il est dirigé par un Président (qui assure la liaison avec le Conseil O5 et le Cabinet de l’Administrateur) et un Vice-Président.','Toute proposition d’amendement ou d’ajout de règle doit être évaluée par le Comité et adoptée à l’unanimité du Conseil Éthique. Le Président n’intervient qu’à titre consultatif et ne vote qu’en cas de partage égal des voix pour trancher.','La révocation d’un membre du Conseil Éthique requiert l’accord conjoint de l’Éditeur en Chef / Cabinet de l’Administrateur et du Représentant O5.']],
+['1.3','Pouvoirs d’enquête, d’intervention et Force d’Intervention Mobile Oméga-1',['Le Comité d’Éthique a autorité pour évaluer, suspendre ou interrompre toute expérience, procédure de confinement ou opération jugée contraire à l’éthique, tous départements confondus.','Il dispose d’un droit d’accès prioritaire aux rapports, dossiers médicaux, serveurs et zones classifiées (sur autorisation présidentielle). En Zone Delta (CDC), le déploiement lors d’une fouille s’effectue avec au moins deux agents de sécurité ou de protection rapprochée.','<b>Unité FIM Oméga-1 (« La Main Gauche ») :</b> Placée sous la juridiction exclusive du Comité d’Éthique, la FIM Oméga-1 détient plein pouvoir d’intervention et d’arrestation sur tout membre du personnel ayant enfreint le Code, quel que soit son grade. Ses opérateurs n’obéissent qu’aux ordres directs du Comité d’Éthique.','Il est strictement interdit d’interrompre, d’entraver ou de couper la parole à un membre du Comité d’Éthique ou à ses représentants dans l’exercice de leurs fonctions.']],
+['1.4','Contraintes déontologiques internes du Comité',['Les membres du Comité d’Éthique s’astreignent à une rigueur exemplaire : interdiction absolue d’abus d’autorité ou de conflit d’intérêts, courtoisie en toutes circonstances, impartialité stricte, confidentialité intégrale, suivi psychologique régulier et maîtrise réglementaire de l’armement (formation PPA et respect des règles ISTC en cas de port d’arme létale).']]]},
+{t:'Codex général, droits du personnel et protections fondamentales',a:[
+['2.1','Dignité, égalité et non-discrimination',['Tout membre de la Fondation a droit au respect et à la dignité, indépendamment de son grade, de son département, de son origine, de ses convictions philosophiques ou religieuses, de son orientation ou de son état de santé.','Les agressions verbales, physiques ou morales, le harcèlement, les menaces, le chantage et l’abus d’autorité à des fins personnelles sont strictement proscrits.','Les membres de l’Administration doivent traiter l’ensemble du personnel comme leurs égaux et formuler leurs ordres avec calme et courtoisie. En cas d’insulte ou d’outrage, un cadre administratif doit garder son sang-froid et solliciter la sécurité pour interpellation sans jamais par l’agressivité.','La profanation de cadavres est formellement interdite. Tout décès doit être constaté par un médecin (vérification du pouls) et le corps préservé de toute atteinte.']],
+['2.2','Droit de refus, lanceurs d’alerte et recours',['<b>Droit de refus légitime :</b> Tout membre du personnel a le droit et le devoir de refuser l’exécution d’un ordre manifestement contraire au présent Code d’Éthique. Ce refus, dès lors qu’il est motivé et signalé au Comité, ne peut entraîner aucune sanction. À l’inverse, ordonner une violation éthique engage la responsabilité de l’instigateur et de ses complices.','<b>Protection des lanceurs d’alerte :</b> Tout comportement suspect ou abus doit être signalé au Comité d’Éthique (y compris de façon anonyme via le réseau intranet). Toute mesure de rétorsion envers un signalant est sévèrement réprimée.','<b>Droit à l’erreur honnête :</b> Aucun membre ne peut être sanctionné pour une erreur involontaire survenue malgré le respect scrupuleux des protocoles. Les incidents sont analysés pour améliorer les procédures, sans recherche de bouc émissaire.','<b>Droit d’appel :</b> Toute sanction disciplinaire est motivée, documentée et peut faire l’objet d’un recours dans un délai de quinze (15) jours auprès du Comité d’Éthique ou de la Justice Interne, sans risque d’aggravation pour l’exercice de ce droit.','<b>Interdiction des renvois abusifs :</b> Tout licenciement ou rétrogradation doit reposer sur des motifs objectifs et vérifiables, après que l’intéressé a pu présenter sa défense.']],
+['2.3','Santé physique, soutien psychologique et équilibre opérationnel',['Tout membre du personnel exposé à un événement traumatisant ou éprouvant une détresse morale a droit à un suivi médical et psychologique gratuit, confidentiel et immédiat.','Tout personnel diagnostiqué avec un trouble psychologique ou mental doit impérativement suivre un accompagnement médical adapté avant toute reprise de poste à risque.','Le droit de retrait temporaire de mission pour raison de santé physique ou mentale est garanti sans sanction. Les temps de repos et congés doivent être respectés afin d’éviter toute surcharge de travail nuisible au jugement.']],
+['2.4','Confidentialité, A.S.I.A. et Personnel Censuré',['La divulgation non autorisée d’informations relatives aux SCP, aux opérations ou aux effectifs constitue une infraction majeure. Chaque membre est soumis à une évaluation éthique trimestrielle (tous les 3 mois) et à une formation éthique annuelle obligatoire.','<b>Département A.S.I.A. (Sécurité Informatique & Serveurs) :</b> Les membres de l’A.S.I.A. sont astreints au silence absolu sur leurs fonctions et identifiants, même sous contrainte ou torture. Le partage d’identifiants, de cartes d’accès ou l’introduction d’un tiers non autorisé en salle des serveurs (laquelle doit être isolée phoniquement et électromagnétiquement) entraîne l’exécution immédiate sans appel. Toute fuite issue des serveurs engage la responsabilité présumée de l’A.S.I.A. jusqu’à preuve du contraire. Bien que disposant d’un accès technique, ses membres ont l’interdiction formelle de consulter ou modifier des fichiers dépassant leur niveau d’accréditation.','<b>Personnel Classifié / Censuré :</b> Tout membre occupant une fonction censurée est tenu au secret absolu et habilité à faire cesser immédiatement toute fuite le concernant. Le personnel de la Fondation doit accepter leur présence sans objection. Il est formellement interdit de les questionner sur leur identité, leur grade ou leur fonction sous peine de convocation immédiate devant le Comité d’Éthique.']],
+['2.5','Accès aux zones de confinement et protocoles extérieurs',[]]]},
+{t:'Codex sécuritaire et départements de justice',a:[['3.1','Usage proportionné de la force et armement',[]],['3.2','Protection des équipes, lockdowns et chaîne de commandement',[]],['3.3','Relations avec le Département de la Justice Interne (DJI)',[]]]},
+{t:'Statut et protection du personnel de Classe-D (Delta)',a:[['4.1','Droits fondamentaux et dignité humaine',[]],['4.2','Encadrement, escorte et conditions d’usage de la force létale',[]]]},
+{t:'Codex scientifique et protocoles d’expérimentation',a:[['5.1','Validation, limites et sécurité des expériences',[]],['5.2','Responsabilité en cas de brèche et intégrité scientifique',[]]]},
+{t:'Codex médical',a:[['6.1','Déontologie, secret médical et usage des équipements',[]],['6.2','Substances contrôlées et amnésiques',[]]]},
+{t:'Normes modernes pour anomalies conscientes et sapientes',a:[['7.1','Approche et détention des anomalies humaines',[]],['7.2','Traitement quotidien et échelle standardisée des privilèges',[]],['7.3','Prévention du Syndrome de DSI',[]]]},
+{t:'Échelle des sanctions et procédures de signalement',a:[['8.1','Barème des sanctions éthiques',[]],['8.2','Anomalies éthiques internes et canaux de recours',[]]]},
+{t:'Régulation, surveillance et réglementation du département A.S.I.A.',a:[['9.1','Subordination hiérarchique et fin de l’immunité technique',['Le département A.S.I.A. (Sécurité Informatique & Serveurs) est une branche purement technique et logistique. Ses membres ne disposent d’aucune autorité hiérarchique, judiciaire ou morale sur le reste du personnel du Site-Pandora.','L’accès aux infrastructures critiques ou aux données classifiées ne confère aucun statut d’exception. Toute manifestation d’arrogance, de sentiment de supériorité ou de mépris envers l’ordre éthique ou les autres départements est considérée comme une faute grave.','En vertu de l’Article 1.1, l’A.S.I.A. est intégralement soumise à l’autorité du Comité d’Éthique. Aucun membre de l’A.S.I.A., quel que soit son rang interne, ne peut invoquer la « sécurité des systèmes » ou le « secret technique » pour se soustraire à un contrôle éthique.']],['9.2','Interdiction de l’ingérence numérique et de la surveillance abusive',['Il est formellement interdit aux agents de l’A.S.I.A. d’utiliser leurs accès serveurs, caméras ou réseaux intranet pour espionner, ficher, faire chanter ou intimider un membre du personnel ou un membre du Comité d’Éthique.','Toute altération, suppression, dissimulation ou falsification de preuves numériques (logs, enregistrements de vidéosurveillance, rapports d’incidents) lors d’une enquête du Comité d’Éthique ou de la DJI est qualifiée de haute trahison.','La création de portes dérobées (<i>backdoors</i>), de comptes fantômes ou de protocoles d’exclusion empêchant l’accès du Comité d’Éthique aux bases de données du Site est strictement proscrite.']]]},
+{t:'État d’exception éthique, mutineries et crise de commandement',a:[['10.1','Qualification d’insubordination collective et de mutinerie',[]],['10.2','Activation du Protocole « Jugement Dernier » (Mise sous tutelle)',[]],['10.3','Neutralisation des alliances illicites et du corporatisme',[]],['10.4','Immunité et réquisition en temps de crise',[]]]},
+{t:'Probité hiérarchique, usage des canaux de communication et prévention des abus de pouvoir',a:[['11.1','Régulation stricte des canaux d’annonce et de diffusion globale',[]],['11.2','Répression de l’abus de pouvoir et du zèle hiérarchique',[]],['11.3','Interdiction de la condescendance et du mépris de rang',[]],['11.4','Barème des sanctions pour dérive d’autorité',[]]]}];
+const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI'];
+const $=s=>document.querySelector(s),app=$('#app');
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ban=(h,s)=>`<div class="ban"><svg viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8v44M20 52h24M10 18h44M10 18l-7 17h14zM54 18l-7 17h14z"/></svg><h1>${h}</h1><p>${s}</p></div>`;
+const arts=()=>D.flatMap(d=>d.a.map(a=>a[0]+' — '+a[1]));
+const V={
+accueil:()=>ban('Fondation SCP — Sécuriser. Contenir. Protéger.','Comité d’Éthique du Site-Pandora')+
+`<div class="ref">RÉFÉRENCE : CE-108/INT-2025</div>
+<p class="dev">« Protéger l’humanité, préserver l’humanité. L’éthique guide la main qui contient. »</p>
+<h2>Préambule</h2><div class="box"><p>${P}</p><p>Sa vocation n’est pas uniquement répressive : il protège l’intégrité physique et morale du personnel, encadre les pratiques scientifiques et sécuritaires, et garantit le traitement digne des sujets humains et des anomalies conscientes.</p><p class="dev">« La Fondation S.C.P. est froide, pas cruelle. »</p></div>
+<h2>Principes fondateurs</h2><div class="grid"><div class="pil"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><b>Dignité</b><p>Chaque membre du personnel et chaque sujet est traité avec respect, quel que soit son grade.</p></div><div class="pil"><svg viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M4 8h16M4 8l-2 5h4zM20 8l-2 5h4z"/></svg><b>Indépendance</b><p>Le Comité agit sans subordination envers aucun département, y compris la Justice Interne.</p></div><div class="pil"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>Transparence</b><p>Les incidents sont analysés et publiés en interne pour améliorer les procédures.</p></div></div>
+<h2>Accès rapide</h2><div class="grid">
+<a class="card" href="#comite"><small>Présentation</small><span>Le Comité</span></a>
+<a class="card" href="#code"><small>Texte en vigueur</small><span>Code d’éthique</span></a>
+<a class="card" href="#suggestion"><small>Contribuer</small><span>Proposer une amélioration</span></a></div>`,
+comite:()=>ban('Le Comité d’Éthique','Composition, mandat et pouvoirs')+
+`<h2>Mandat</h2><p>Le Comité d’Éthique est une instance autonome, impartiale et indépendante de tout département. Il évalue, suspend ou interrompt toute expérience, procédure de confinement ou opération contraire à l’éthique.</p>
+<h2>Gouvernance</h2><div class="box"><p><b>Président :</b> Kaito Arima, en liaison avec le Conseil O5 et le Cabinet de l’Administrateur.</p><p><b>Représentante du Sous-Comité Anomalies Sapientes :</b> Léon Sierra.</p><p><b>Unité d’intervention :</b> FIM Oméga-1 (« La Main Gauche »), placée sous la juridiction exclusive du Comité.</p></div>
+<h2>Compétences</h2><ol><li>Primauté sur le Code Pénal interne en matière d’infractions éthiques.</li><li>Accès prioritaire aux rapports, dossiers médicaux, serveurs et zones classifiées.</li><li>Traitement des signalements, y compris anonymes, avec protection des lanceurs d’alerte.</li><li>Amendement du Code, adopté à l’unanimité du Conseil Éthique.</li></ol>`,
+code:()=>ban('Code d’éthique unifié','Charte déontologique — En vigueur')+
+`<div class="sb"><input id="q" type="search" aria-label="Rechercher" placeholder="Rechercher dans tout le code (ex. A.S.I.A., Classe-D, lockdown)"><p class="m" id="cnt"></p></div><div class="toc">${D.map((d,i)=>`<button data-d="${i+1}" title="${d.t}">Division ${R[i]}</button>`).join('')}</div><div class="no-print"><button class="p" id="pr" type="button">Exporter / imprimer en PDF</button></div><div id="cb"></div>`,
+suggestion:()=>ban('Proposer une amélioration','Toute contribution est examinée par le Comité')+
+`<h2>Registre des décisions</h2><p class="m">En étude : examen en cours. Retenue : retenue pour amendement. Acceptée : intégrée au Code. Rejetée : non retenue.</p><div class="reg" id="rg"></div><div id="dl"></div><div class="orn"><i></i></div><h2>Soumettre une suggestion</h2><div id="f"><label for="n">Nom ou matricule (facultatif)</label><input id="n" maxlength="80"><label for="a">Article concerné</label><select id="a"><option>Général</option>${arts().map(x=>`<option>${x}</option>`).join('')}</select><label for="t">Suggestion</label><textarea id="t" rows="7" maxlength="2000"></textarea><button class="p" id="go" type="button">Transmettre</button><p id="ok" role="status"></p></div>`,
+signalement:()=>ban('Signalement','Article 2.2 — Protection des lanceurs d’alerte')+
+`<div class="box"><p>Tout comportement suspect ou abus peut être signalé au Comité d’Éthique de façon anonyme. Aucune identité n’est demandée. Toute mesure de rétorsion envers un signalant est sévèrement réprimée.</p></div><div id="rf"><label for="c">Nature du signalement</label><select id="c"><option>Abus d’autorité</option><option>Violation éthique</option><option>Harcèlement ou discrimination</option><option>Atteinte à la confidentialité</option><option>Autre</option></select><label for="rt">Description des faits</label><textarea id="rt" rows="8" maxlength="4000"></textarea><label for="ct">Moyen de vous recontacter (facultatif)</label><input id="ct" maxlength="120"><button class="p" id="rs" type="button">Envoyer le signalement</button><p id="rk" role="status"></p></div>`,
+admin:()=>ban('Espace administrateur','Accès restreint')+`<div id="ad"></div>`};
+function rx(q){const m={a:'aàâä',e:'eéèêë',i:'iîï',o:'oôö',u:'uùûü',c:'cç'};
+const p=q.toLowerCase().replace(/[^a-z0-9àâäéèêëîïôöùûüç\s]/g,'').trim();if(!p)return null;
+return new RegExp(p.split(/\s+/).map(w=>[...w].map(c=>{const k=c.normalize('NFD')[0];return m[k]?'['+m[k]+']':k}).join('\\.?')).join('[\\s\\-]+'),'gi')}
+const hl=(s,r)=>s.split(/(<[^>]+>)/).map(x=>x[0]==='<'?x:x.replace(r,'<mark>$&</mark>')).join('');
+function codeHTML(q){const r=rx(q);let n=0;
+const h=D.map((d,i)=>{const as=d.a.filter(([a,t,it])=>!r||(a+' '+t+' '+it.join(' ')).replace(/<[^>]+>/g,'').search(r)>=0);
+if(!as.length)return'';
+return `<section id="d${i+1}"><div class="band rv"><small>Division ${R[i]}</small><h2>${d.t}</h2></div>`+as.map(([a,t,it])=>{n++;const H=s=>r?hl(s,r):s;return `<div class="art rv"><h3>Article ${a} — ${H(t)}</h3>`+(it.length?`<ol>${it.map(x=>`<li>${H(x)}</li>`).join('')}</ol>`:'<p class="m">Texte de l’article en cours d’intégration.</p>')+'</div>'}).join('')+'</section>'}).join('');
+return{h:h||'<p>Aucun résultat.</p>',n}}
+const SC={'Nouvelle':'#6b7a70','En étude':'#a67c37','Retenue':'#2f6f8f','Acceptée':'#2f7a4f','Rejetée':'#9b3b32'};
+const IC={'Nouvelle':'<path d="M3 6h18v12H3zM3 6l9 7 9-7"/>','En étude':'<path d="M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/>','Retenue':'<path d="M6 3h12v18l-6-4-6 4z"/>','Acceptée':'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>','Rejetée':'<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>'};
+const nodb='<div class="box"><p>La base de données n’est pas configurée.</p></div>';
+const dt=x=>new Date(x).toLocaleDateString('fr-FR');
+let RG=null;
+async function reg(f){
+if(!sb){$('#dl').innerHTML=nodb;return}
+if(!RG){const r=await sb.from('public_decisions').select('*').order('created_at',{ascending:false});if(r.error){$('#dl').innerHTML='<div class="box"><p>Registre momentanément indisponible.</p></div>';return}RG=r.data}
+$('#rg').innerHTML=Object.keys(SC).filter(k=>k!=='Nouvelle').map(k=>`<button type="button" class="st${f===k?' on':''}" style="--c:${SC[k]}" data-f="${k}"><b>${RG.filter(s=>s.status===k).length}</b><span>${k}</span></button>`).join('');
+const sh=RG.filter(s=>!f||s.status===f);
+$('#dl').innerHTML=sh.length?sh.map(s=>`<div class="dec" style="--c:${SC[s.status]}"><svg viewBox="0 0 24 24">${IC[s.status]}</svg><div><span class="tag">${s.status}</span><div class="m">${dt(s.created_at)} — ${esc(s.article)}</div><p>${esc(s.body.length>160?s.body.slice(0,160)+'…':s.body)}</p>${s.motif?`<div class="mot">${esc(s.motif)}</div>`:''}</div></div>`).join(''):'<div class="box"><p>Aucune décision dans cette catégorie pour le moment.</p></div>';
+document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>reg(f===b.dataset.f?'':b.dataset.f))}
+const row=(tb,id,k,v,opts)=>`<select aria-label="Statut" data-tb="${tb}" data-k="${k}" data-id="${id}">${opts.map(o=>`<option${o===v?' selected':''}>${o}</option>`).join('')}</select><button type="button" data-tb="${tb}" data-del="${id}">Supprimer</button>`;
+const sug=L=>L.length?L.map(x=>`<div class="s"><div class="m">${dt(x.created_at)} — ${esc(x.author||'Anonyme')} — ${esc(x.article)}</div><p>${esc(x.body)}</p>${row('suggestions',x.id,'status',x.status,Object.keys(SC))}<input class="mi" aria-label="Motif" data-tb="suggestions" data-k="motif" data-id="${x.id}" placeholder="Motif de la décision (affiché dans le registre public)" value="${esc(x.motif||'')}"></div>`).join(''):'<p>Aucune suggestion.</p>';
+const rep=L=>L.length?L.map(x=>`<div class="s"><div class="m">${dt(x.created_at)} — ${esc(x.category)}</div><p>${esc(x.body)}</p>${x.contact?`<div class="m">Contact : ${esc(x.contact)}</div>`:''}${row('reports',x.id,'status',x.status,['Nouveau','En cours','Clos'])}</div>`).join(''):'<p>Aucun signalement.</p>';
+async function panel(el,tab){tab=tab||'s';
+const[a,b]=await Promise.all([sb.from('suggestions').select('*').order('created_at',{ascending:false}),sb.from('reports').select('*').order('created_at',{ascending:false})]);
+const S=a.data||[],T=b.data||[];
+el.innerHTML=`<div class="toc"><button type="button" data-t="s">Suggestions (${S.length})</button><button type="button" data-t="r">Signalements (${T.length})</button><button type="button" id="lo">Se déconnecter</button></div><div id="pl"></div>`;
+const pl=$('#pl');pl.innerHTML=tab==='s'?sug(S):rep(T);
+el.querySelectorAll('[data-t]').forEach(x=>x.onclick=()=>panel(el,x.dataset.t));
+$('#lo').onclick=async()=>{await sb.auth.signOut();admin()};
+pl.onchange=async e=>{const t=e.target;if(!t.dataset.id)return;const v=t.dataset.k==='motif'?(t.value.trim()||null):t.value;const r=await sb.from(t.dataset.tb).update({[t.dataset.k]:v}).eq('id',t.dataset.id);if(r.error)alert('Modification refusée.')};
+pl.onclick=async e=>{const t=e.target;if(!t.dataset.del||!confirm('Supprimer définitivement cet élément ?'))return;await sb.from(t.dataset.tb).delete().eq('id',t.dataset.del);panel(el,tab)}}
+async function admin(){const el=$('#ad');if(!sb){el.innerHTML=nodb;return}
+const{data:{session}}=await sb.auth.getSession();
+if(session){const{data:ok}=await sb.rpc('is_admin');if(ok)return panel(el);await sb.auth.signOut()}
+el.innerHTML='<label for="em">Adresse e-mail</label><input id="em" type="email" autocomplete="username"><label for="pw">Mot de passe</label><input id="pw" type="password" autocomplete="current-password"><button class="p" id="lg" type="button">Se connecter</button><p id="er" role="alert"></p>';
+$('#lg').onclick=async()=>{const r=await sb.auth.signInWithPassword({email:$('#em').value.trim(),password:$('#pw').value});if(r.error){$('#er').textContent='Identifiants incorrects.';return}admin()}}
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.08});
+const rv=()=>document.querySelectorAll('.rv:not(.in)').forEach(e=>io.observe(e));
+function route(){const h=(location.hash||'#accueil').slice(1);let v=h;
+const m=/^div-(\d+)$/.exec(h);
+app.innerHTML=(m?V.code:V[h]||V.accueil)();
+if(m)v='code';
+document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+menu(false);window.scrollTo(0,0);bind()}
+function bind(){
+const g=$('#go');if(g)g.onclick=async()=>{const t=$('#t').value.trim();if(t.length<10){$('#ok').textContent='Veuillez détailler votre suggestion.';return}
+if(!sb){$('#ok').textContent='Base de données non configurée.';return}
+g.disabled=true;const r=await sb.from('suggestions').insert({author:$('#n').value.trim()||null,article:$('#a').value,body:t});
+if(r.error){g.disabled=false;$('#ok').textContent='Envoi impossible. Veuillez réessayer.';return}
+$('#f').innerHTML='<div class="box"><p>Votre suggestion a été transmise au Comité d’Éthique. Elle apparaîtra dans le registre une fois examinée.</p></div>'};
+const rs=$('#rs');if(rs)rs.onclick=async()=>{const t=$('#rt').value.trim();if(t.length<10){$('#rk').textContent='Veuillez décrire les faits.';return}
+if(!sb){$('#rk').textContent='Base de données non configurée.';return}
+rs.disabled=true;const r=await sb.from('reports').insert({category:$('#c').value,body:t,contact:$('#ct').value.trim()||null});
+if(r.error){rs.disabled=false;$('#rk').textContent='Envoi impossible. Veuillez réessayer.';return}
+$('#rf').innerHTML='<div class="box"><p>Votre signalement a été transmis au Comité d’Éthique.</p></div>'};
+if($('#ad'))admin();
+if($('#rg'))reg('');
+const q=$('#q');if(q){const up=()=>{const c=codeHTML(q.value);$('#cb').innerHTML=c.h;$('#cnt').textContent=q.value.trim()?c.n+' article(s) correspondant(s)':'';rv()};q.oninput=up;up();
+document.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{const e=$('#d'+b.dataset.d);if(e)e.scrollIntoView({behavior:'smooth'})});
+$('#pr').onclick=()=>{q.value='';up();document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'));print()};
+const m=/^div-(\d+)$/.exec(location.hash.slice(1));if(m)setTimeout(()=>{const e=$('#d'+m[1]);if(e)e.scrollIntoView()},50)}
+rv()}
+const nv=$('#nv'),bg=$('#bg');
+function menu(o){nv.classList.toggle('o',o);$('#sh').classList.toggle('o',o);bg.setAttribute('aria-expanded',o);nv.inert=!o;app.inert=o;$('footer').inert=o;if(o)nv.querySelector('a').focus()}
+bg.onclick=()=>menu(!nv.classList.contains('o'));
+$('#sh').onclick=()=>menu(false);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&nv.classList.contains('o')){menu(false);bg.focus()}});
+addEventListener('hashchange',route);route();
+</script>
+</body>
+</html>
