@@ -341,7 +341,7 @@ flush();return D}
 const D=parse(document.getElementById('code-src').textContent);
 const M=parse(document.getElementById('man-src').textContent);
 const lab=i=>R[i]?'Division '+R[i]:'Annexe';
-const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI''XII'];
+const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
 const $=s=>document.querySelector(s),app=$('#app');
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ban=(h,s)=>`<div class="ban"><svg viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8v44M20 52h24M10 18h44M10 18l-7 17h14zM54 18l-7 17h14z"/></svg><h1>${h}</h1><p>${s}</p></div>`;
