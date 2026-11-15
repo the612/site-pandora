@@ -214,6 +214,25 @@ A 11.4 | Barème des sanctions pour dérive d'autorité
 * **Abus d'annonce / Spam radio :** Révocation des accès intercom et travaux d'intérêt général.
 * **Condescendance répétée / Mépris envers les bas grades :** Avertissement écrit au dossier et suspension temporaire de commandement.
 * **Abus de pouvoir caractérisé / Chantage hiérarchique :** Rétrogradation immédiate de deux échelons ou mutation disciplinaire hors site.
+D Statuts spéciaux et encadrement des unités spécialisées
+A 12.1 | Cadre d'intervention et limites strictes de la Division Alpha (Réf. DA-001)
+P Conformément à son règlement interne (Dossier DA-001), la Division Alpha est une unité de protection rapprochée rattachée à la Direction de la Sécurité. Elle ne bénéficie d'aucune immunité face au Code d'Éthique et demeure soumise aux règles suivantes, incluant les aménagements strictement limités aux Divisions II, III, IV, IX et X :
+- **Périmètre de protection et restrictions d'accès (Division II) :**
+* **Interdiction formelle d'accès :** Les opérateurs de la Division Alpha ont l'interdiction absolue de pénétrer en Zone de Confinement (Safe, Euclid, Keter) ainsi qu'en Zone Carcérale / Classe-Delta (CDC), même dans le cadre d'une escorte.
+* **Règle de proximité (Salle adjacente) :** Dans l'exercice de leur mission de protection rapprochée, les agents doivent assurer une surveillance constante de leur personne protégée (VIP). Si le VIP pénètre dans une zone restreinte ou un bureau privé, l'escorte doit impérativement se maintenir à l'extérieur, au maximum dans la salle adjacente, sans jamais franchir le seuil interdit.
+* **Dérogation limitée (Article 2.5.1) :** Par stricte dérogation à l'Article 2.5.1, les opérateurs de la Division Alpha sont dispensés d'escorte personnelle pour circuler dans les secteurs administratifs et sécuritaires standards du Site afin d'assurer leur mission d'accompagnement.
+- **Double subordination hiérarchique et obéissance (Division III) :**
+* **Respect absolu de la Direction de la Sécurité :** Conformément à l'Article 5 du dossier DA-001 et à l'Article 3.2.3 du présent Code, les membres de la Division Alpha doivent obéissance et respect en toutes circonstances au Directeur Sécuritaire et à la chaîne de commandement de la Sécurité.
+* **Respect des ordres du VIP :** Les opérateurs sont tenus de respecter scrupuleusement les directives, consignes de déplacement et ordres légitimes de leur VIP, tant que ceux-ci ne contreviennent pas au présent Code d'Éthique ni aux ordres du Directeur Sécuritaire.
+* **Absence de pouvoir judiciaire :** Conformément à l'Article 17 du dossier DA-001, la Division Alpha ne détient aucune autorité judiciaire ou disciplinaire et ne peut procéder à des arrestations arbitraires.
+- **Interdiction d'interaction avec la Classe-Delta (Division IV) :**
+* N'étant pas habilités à pénétrer en Zone Delta, les membres de la Division Alpha ne disposent d'aucune prérogative sur le personnel de Classe-D (réquisition, fouille ou termination). En cas de menace directe contre leur VIP par un Classe-D évadé hors zone, seul l'usage strictement proportionné de la force en légitime défense est autorisé (Article 3.1).
+- **Neutralité numérique et confidentialité (Division IX) :**
+* Par dérogation limitée à l'Article 9.2 uniquement pour la protection des données de leurs missions, les agents de la Division Alpha sont tenus au secret professionnel (Article 8 du DA-001) concernant l'identité et les déplacements de leur VIP, mais ne disposent d'aucun droit d'accès aux serveurs, caméras ou logs de l'A.S.I.A., ni d'aucun droit de dissimulation face au Comité d'Éthique.
+- **Usage strict des canaux de communication (Division X) :**
+* Par dérogation encadrée à l'Article 10.1, la Division Alpha est uniquement autorisée à utiliser les fréquences radio sécuritaires dédiées à la coordination de protection et de signalement de menace (CRISIS SUPPORT / THREAT ASSESSMENT). Tout abus d'annonce globale, prise de hauteur ou abus d'autorité envers le personnel est formellement proscrit (Article 20 du DA-001) et sanctionné conformément à la Division X.
+- **Primauté du Comité d'Éthique :**
+* En toutes circonstances, le Code d'Éthique prévaut sur les directives internes de la Division Alpha (Article 6 du DA-001 et Article 1.1 du présent Code). Tout ordre d'un VIP ou d'un supérieur incitant à violer le présent article doit être immédiatement refusé et signalé au Comité d'Éthique.
 D Dispositions finales
 A Avertissement | Avertissement réglementaire
 P « LE PERSONNEL INTERNE ET EXTERNE A L'OBLIGATION DE RESPECTER L'INTÉGRALITÉ DU PRÉSENT CODE SOUS PEINE DE SANCTIONS IMMÉDIATES. »
@@ -322,7 +341,7 @@ flush();return D}
 const D=parse(document.getElementById('code-src').textContent);
 const M=parse(document.getElementById('man-src').textContent);
 const lab=i=>R[i]?'Division '+R[i]:'Annexe';
-const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI'];
+const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI''XII'];
 const $=s=>document.querySelector(s),app=$('#app');
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ban=(h,s)=>`<div class="ban"><svg viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8v44M20 52h24M10 18h44M10 18l-7 17h14zM54 18l-7 17h14z"/></svg><h1>${h}</h1><p>${s}</p></div>`;
@@ -332,7 +351,7 @@ accueil:()=>ban('Fondation SCP — Sécuriser. Contenir. Protéger.','Comité d�
 `<div class="ref">RÉFÉRENCE : CE-108/INT-2025</div>
 <p class="dev">« Protéger l’humanité, préserver l’humanité. L’éthique guide la main qui contient. »</p>
 <h2>Préambule</h2><div class="box"><p>${P}</p><p>Sa vocation n’est pas uniquement répressive : il protège l’intégrité physique et morale du personnel, encadre les pratiques scientifiques et sécuritaires, et garantit le traitement digne des sujets humains et des anomalies conscientes.</p><p class="dev">« La Fondation S.C.P. est froide, pas cruelle. »</p></div>
-<div class="facts"><div><b>11</b><span>Divisions du Code</span></div><div><b>15 jours</b><span>Délai de recours</span></div><div><b>3 mois</b><span>Évaluation éthique</span></div><div><b>Unanimité</b><span>Pour tout amendement</span></div></div>
+<div class="facts"><div><b>12</b><span>Divisions du Code</span></div><div><b>15 jours</b><span>Délai de recours</span></div><div><b>3 mois</b><span>Évaluation éthique</span></div><div><b>Unanimité</b><span>Pour tout amendement</span></div></div>
 <h2>Principes fondateurs</h2><div class="grid"><div class="pil"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><b>Dignité</b><p>Chaque membre du personnel et chaque sujet est traité avec respect, quel que soit son grade.</p></div><div class="pil"><svg viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M4 8h16M4 8l-2 5h4zM20 8l-2 5h4z"/></svg><b>Indépendance</b><p>Le Comité agit sans subordination envers aucun département, y compris la Justice Interne.</p></div><div class="pil"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>Transparence</b><p>Les incidents sont analysés et publiés en interne pour améliorer les procédures.</p></div></div>
 <h2>Accès rapide</h2><div class="grid">
 <a class="card" href="#comite"><small>Présentation</small><span>Le Comité</span></a>
